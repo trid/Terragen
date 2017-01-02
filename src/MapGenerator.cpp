@@ -12,7 +12,7 @@ void MapGenerator::generate() {
     AgentManager agentManager;
 
     for (int i = 0; i < 80; i++) {
-        agentManager.addAgent(5000);
+        agentManager.addAgent(150);
         agentManager.run(map);
     }
 }

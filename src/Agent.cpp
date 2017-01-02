@@ -25,7 +25,6 @@ void Agent::act(Map &map) {
     scoreAndSet(map);
     randomMove();
     setPlace();
-    --tokens;
     if (tokens == 0) {
         finished = true;
     }
@@ -106,7 +105,10 @@ void Agent::scoreAndSet(Map &map) {
         maxPos = {xPos - 1, yPos};
     }
 
-    map.setItem(maxPos.x, maxPos.y, 1.f);
+    if (map.getItem(maxPos.x, maxPos.y) < 0) {
+        map.setItem(maxPos.x, maxPos.y, 1.f);
+        tokens--;
+    }
 }
 
 int Agent::scorePoint(int x, int y) {

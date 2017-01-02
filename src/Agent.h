@@ -20,7 +20,7 @@ private:
 
     bool finished{false};
 
-    static const int minTokens = 20;
+    static const int minTokens = 10;
 
     void setPlace();
     void initialize();
