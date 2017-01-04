@@ -11,8 +11,8 @@ MapGenerator::MapGenerator(Map &map) : map(map) {}
 void MapGenerator::generate() {
     AgentManager agentManager;
 
-    for (int i = 0; i < 80; i++) {
-        agentManager.addAgent(150);
+    for (int i = 0; i < 5; i++) {
+        agentManager.addAgent(3000);
         agentManager.run(map);
     }
 }
