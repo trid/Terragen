@@ -5,14 +5,15 @@
 #include "AgentManager.h"
 
 #include "Agent.h"
+#include "CoastlineAgent.h"
 
-void AgentManager::addAgent(int tokens) {
-    agents.emplace_back(new Agent(tokens, *this));
+void AgentManager::addCoastlineAgent(int tokens) {
+    agents.emplace_back(new CoastlineAgent(tokens, *this));
 
 }
 
-void AgentManager::addAgent(int xPos, int yPos, int tokens) {
-    agents.emplace_back(new Agent(xPos, yPos, tokens, *this));
+void AgentManager::addCoastlineAgent(int xPos, int yPos, int tokens) {
+    agents.emplace_back(new CoastlineAgent(xPos, yPos, tokens, *this));
 }
 
 void AgentManager::run(Map &map) {

@@ -12,7 +12,7 @@ void MapGenerator::generate() {
     AgentManager agentManager;
 
     for (int i = 0; i < 5; i++) {
-        agentManager.addAgent(3000);
+        agentManager.addCoastlineAgent(3000);
         agentManager.run(map);
     }
 }

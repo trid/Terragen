@@ -12,32 +12,23 @@ class Agent {
 private:
     int tokens;
     int xPos, yPos;
-    // Preferred direction
-    int xDir, yDir;
-    int xAttractor, yAttractor;
-    int xRepulsor, yRepulsor;
+
     AgentManager& agentManager;
-
-    bool finished{false};
-
-    static const int minTokens = 50;
-
+protected:
     void setPlace();
-    void initialize();
-    void randomMove();
+    void spendToken() { tokens--; }
+    void move(int dx, int dy);
+    int getX() { return xPos; }
+    int getY() { return yPos; }
+    int getTokens() { return tokens; }
+    AgentManager& getAgentManager() { return agentManager; }
 public:
     Agent(int xPos, int yPos, int tokens, AgentManager& agentManager);
     Agent(int tokens, AgentManager &agentManager);
 
-    int getTokens() const;
+    virtual void act(Map& map) = 0;
 
-    void act(Map& map);
-
-    bool isFinished() { return finished; }
-
-    void scoreAndSet(Map &map);
-
-    int scorePoint(int x, int y);
+    bool isFinished() { return tokens == 0; }
 };
 
 #endif //TERRAGEN_AGENT_H

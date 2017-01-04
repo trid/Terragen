@@ -18,8 +18,8 @@ class AgentManager {
 private:
     std::list<AgentPtr> agents;
 public:
-    void addAgent(int tokens);
-    void addAgent(int xPos, int yPos, int tokens);
+    void addCoastlineAgent(int tokens);
+    void addCoastlineAgent(int xPos, int yPos, int tokens);
 
     void run(Map& map);
 };
