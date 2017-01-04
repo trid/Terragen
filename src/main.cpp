@@ -21,10 +21,10 @@ int main() {
     for (int i = 0; i < 512; i++) {
         for (int j = 0; j < 512; j++) {
             // Filling pixel data with white color for ground and black for water
-            pixelData[i * 4 + j * 512 * 4] = map.getItem(i, j) > 0 ? 255 : 0;
+            pixelData[i * 4 + j * 512 * 4] = map.getItem(i, j) > 0 ? 0 : 0;
             pixelData[i * 4 + j * 512 * 4 + 1] = map.getItem(i, j) > 0 ? 255 : 0;
-            pixelData[i * 4 + j * 512 * 4 + 2] = map.getItem(i, j) > 0 ? 255 : 0;
-            pixelData[i * 4 + j * 512 * 4 + 3] = map.getItem(i, j) > 0 ? 255 : 0;
+            pixelData[i * 4 + j * 512 * 4 + 2] = map.getItem(i, j) > 0 ? 0 : 255;
+            pixelData[i * 4 + j * 512 * 4 + 3] = 255;
         }
     }
     texture.update(pixelData);
