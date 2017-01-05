@@ -65,7 +65,7 @@ void CoastlineAgent::scoreAndSet(Map &map) {
     }
 
     if (map.getItem(maxPos.x, maxPos.y) < 0) {
-        map.setItem(maxPos.x, maxPos.y, 1.f);
+        map.setItem(maxPos.x, maxPos.y, RandomInt::getInstance().nextInt(1, 5));
         spendToken();
     }
 }

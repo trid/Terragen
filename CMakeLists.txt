@@ -3,7 +3,14 @@ project(Terragen)
 
 set(CMAKE_CXX_STANDARD 14)
 
-set(SOURCE_FILES src/main.cpp src/Map.cpp src/Map.h src/Agent.cpp src/Agent.h src/AgentManager.cpp src/AgentManager.h src/MapGenerator.cpp src/MapGenerator.h src/RandomInt.cpp src/RandomInt.h)
+set(SOURCE_FILES src/main.cpp
+        src/Map.cpp src/Map.h
+        src/Agent.cpp src/Agent.h
+        src/AgentManager.cpp src/AgentManager.h
+        src/CoastlineAgent.cpp
+        src/MapGenerator.cpp src/MapGenerator.h
+        src/RandomInt.cpp src/RandomInt.h
+        )
 add_executable(Terragen ${SOURCE_FILES})
 
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake_modules" ${CMAKE_MODULE_PATH})
