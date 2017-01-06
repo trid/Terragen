@@ -10,6 +10,7 @@ set(SOURCE_FILES src/main.cpp
         src/CoastlineAgent.cpp
         src/MapGenerator.cpp src/MapGenerator.h
         src/RandomInt.cpp src/RandomInt.h
+        src/SmoothingAgent.cpp
         )
 add_executable(Terragen ${SOURCE_FILES})
 
