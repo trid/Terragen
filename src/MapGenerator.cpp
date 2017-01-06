@@ -16,6 +16,6 @@ void MapGenerator::generate() {
         agentManager.run(map);
     }
 
-    agentManager.addSmoothingAgents(50, 150, 150);
+    agentManager.addSmoothingAgents(50, 100, 30);
     agentManager.run(map);
 }
