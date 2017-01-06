@@ -3,7 +3,7 @@
 #include "MapGenerator.h"
 
 void setPixelColor(int x, int y, sf::Uint8* pixelData, Map& map) {
-    if (map.getItem(x, y) < 0) {
+    if (map.getItemHeight(x, y) < 0) {
         pixelData[x * 4 + y * 512 * 4] = 0;
         pixelData[x * 4 + y * 512 * 4 + 1] = 0;
         pixelData[x * 4 + y * 512 * 4 + 2] = 255;
@@ -11,7 +11,7 @@ void setPixelColor(int x, int y, sf::Uint8* pixelData, Map& map) {
     }
     else {
         // Filling pixel data with white color for ground and black for water
-        float h = map.getItem(x, y);
+        float h = map.getItemHeight(x, y);
         pixelData[x * 4 + y * 512 * 4] = static_cast<sf::Uint8>((h / 6) * 255);
         pixelData[x * 4 + y * 512 * 4 + 1] = 255;
         pixelData[x * 4 + y * 512 * 4 + 2] = static_cast<sf::Uint8>((h / 6) * 255);

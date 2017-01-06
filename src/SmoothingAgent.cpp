@@ -40,7 +40,7 @@ void SmoothingAgent::smooth(Map &map) {
             return;
         }
         cnt++;
-        sum += map.getItem(x, y);
+        sum += map.getItemHeight(x, y);
     };
 
     int xPos = getX();
@@ -59,5 +59,5 @@ void SmoothingAgent::smooth(Map &map) {
     addVal(xPos - 1, yPos + 1);
     addVal(xPos - 1, yPos - 1);
 
-    map.setItem(xPos, yPos, sum / cnt);
+    map.setItemHeight(xPos, yPos, sum / cnt);
 }

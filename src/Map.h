@@ -6,18 +6,19 @@
 #define TERRAGEN_MAP_H
 
 #include <vector>
+#include "Tile.h"
 
 class Map {
 private:
-    std::vector<float> data;
+    std::vector<Tile> data;
 
     static const int width = 512;
     static const int height = 512;
 public:
     Map();
 
-    void setItem(int x, int y, float h) { data[x + y * width] = h; }
-    float getItem(int x, int y) { return data[x + y * width]; }
+    void setItemHeight(int x, int y, float h) { data[x + y * width].height = h; }
+    float getItemHeight(int x, int y) { return data[x + y * width].height; }
 };
 
 

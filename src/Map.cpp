@@ -5,5 +5,5 @@
 #include "Map.h"
 
 Map::Map() {
-    data.resize(width * height, -1);
+    data.resize(width * height);
 }
