@@ -15,4 +15,7 @@ void MapGenerator::generate() {
         agentManager.addCoastlineAgent(3000);
         agentManager.run(map);
     }
+
+    agentManager.addSmoothingAgents(50, 150, 150);
+    agentManager.run(map);
 }

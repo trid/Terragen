@@ -21,6 +21,8 @@ public:
     void addCoastlineAgent(int tokens);
     void addCoastlineAgent(int xPos, int yPos, int tokens);
 
+    void addSmoothingAgents(int count, int initialSteps, int tokens);
+
     void run(Map& map);
 };
 

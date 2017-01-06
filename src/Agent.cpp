@@ -43,3 +43,8 @@ void Agent::move(int dx, int dy) {
     yPos += dy;
 }
 
+void Agent::setPosition(int x, int y) {
+    xPos = x;
+    yPos = y;
+}
+
