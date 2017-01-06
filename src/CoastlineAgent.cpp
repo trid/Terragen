@@ -2,6 +2,7 @@
 // Created by TriD on 05.01.2017.
 //
 
+#include <limits>
 #include <SFML/System.hpp>
 #include "AgentManager.h"
 #include "CoastlineAgent.h"
@@ -31,8 +32,8 @@ void CoastlineAgent::randomMove() {
 
 void CoastlineAgent::scoreAndSet(Map &map) {
     sf::Vector2i maxPos;
-    float maxScore = 0;
-    float currentScore;
+    int maxScore = std::numeric_limits<int>::min();
+    int currentScore;
 
     auto isEligible = [](int xPos, int yPos){
         return !(xPos < 0 || xPos > 511 || yPos < 0 || yPos > 511);
@@ -40,7 +41,7 @@ void CoastlineAgent::scoreAndSet(Map &map) {
 
     auto countScore = [&](int xPos, int yPos) -> int{
         if (!isEligible(xPos, yPos)) {
-            return 0;
+            return std::numeric_limits<int>::min();
         }
         return scorePoint(xPos, yPos);
     };
