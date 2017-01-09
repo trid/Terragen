@@ -23,6 +23,7 @@ protected:
     int getTokens() { return tokens; }
     AgentManager& getAgentManager() { return agentManager; }
     void setPosition(int x, int y);
+    void setFinished() { tokens = 0; }
 public:
     Agent(int xPos, int yPos, int tokens, AgentManager& agentManager);
     Agent(int tokens, AgentManager &agentManager);

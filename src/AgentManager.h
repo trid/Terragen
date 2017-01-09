@@ -23,6 +23,8 @@ public:
 
     void addSmoothingAgents(int count, int initialSteps, int tokens);
 
+    void addBeachAgents(int count, int maxHeight, int maxSteps, int maxDist, int tokens);
+
     void run(Map& map);
 };
 

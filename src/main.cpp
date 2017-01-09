@@ -3,6 +3,13 @@
 #include "MapGenerator.h"
 
 void setPixelColor(int x, int y, sf::Uint8* pixelData, Map& map) {
+    if (map.getTile(x, y).type == TileType::Beach) {
+        pixelData[x * 4 + y * 512 * 4] = 233;
+        pixelData[x * 4 + y * 512 * 4 + 1] = 244;
+        pixelData[x * 4 + y * 512 * 4 + 2] = 66;
+        pixelData[x * 4 + y * 512 * 4 + 3] = 255;
+        return;
+    }
     if (map.getItemHeight(x, y) < 0) {
         pixelData[x * 4 + y * 512 * 4] = 0;
         pixelData[x * 4 + y * 512 * 4 + 1] = 0;

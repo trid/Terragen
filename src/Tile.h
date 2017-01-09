@@ -16,6 +16,7 @@ struct Tile {
 
     float height{-1};
     TileType type{TileType::Plain};
+    bool passed;
 };
 
 

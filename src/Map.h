@@ -19,6 +19,8 @@ public:
 
     void setItemHeight(int x, int y, float h) { data[x + y * width].height = h; }
     float getItemHeight(int x, int y) { return data[x + y * width].height; }
+
+    Tile& getTile(int x, int y) { return data[x + y * height];}
 };
 
 

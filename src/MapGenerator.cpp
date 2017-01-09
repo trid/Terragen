@@ -5,6 +5,7 @@
 #include "MapGenerator.h"
 #include "AgentManager.h"
 #include "Agent.h"
+#include "BeachAgent.h"
 
 MapGenerator::MapGenerator(Map &map) : map(map) {}
 
@@ -16,6 +17,11 @@ void MapGenerator::generate() {
         agentManager.run(map);
     }
 
-    agentManager.addSmoothingAgents(50, 100, 30);
+    agentManager.addSmoothingAgents(50, 50, 70);
+    agentManager.run(map);
+
+    BeachAgent::updateBeachPoints(map);
+
+    agentManager.addBeachAgents(128, 2, 32, 4, 60);
     agentManager.run(map);
 }
