@@ -27,7 +27,6 @@ if(SFML_FOUND)
     target_link_libraries(Terragen ${SFML_LIBRARIES})
 endif()
 
-target_link_libraries(Terragen ${LUA_LIBRARIES})
 target_link_libraries(Terragen ${OPENGL_LIBRARIES})
 if (WIN32)
     target_link_libraries(Terragen jpeg)
