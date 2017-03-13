@@ -49,9 +49,17 @@ int main() {
     }
     texture.update(pixelData);
 
-    while (true) {
+    bool finished = false;
+    while (!finished) {
         window.draw(sprite);
         window.display();
+
+        sf::Event event;
+        while (window.pollEvent(event)) {
+            if (event.type == sf::Event::Closed) {
+                finished = true;
+            }
+        }
     }
 
     return 0;

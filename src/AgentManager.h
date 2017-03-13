@@ -25,6 +25,8 @@ public:
 
     void addBeachAgents(int count, int maxHeight, int maxSteps, int maxDist, int tokens);
 
+    void addMountainAgents(int count, int minWidth, int maxWidth, int tokens);
+
     void run(Map& map);
 };
 
