@@ -23,13 +23,21 @@ private:
 
     float width;
 
-    std::uniform_int_distribution<int> distributor{0, 360};
-    std::default_random_engine engine;
+    int minWidth;
+    int maxWidth;
+
+    bool firstStep{true};
+    int steps{0};
+    int stepsToRotate;
 
     void updateDirection();
     void updatePosition(Map &map);
     void createRange(Map &map);
     void setPoint(float xPoint, float yPoint, float height, Map &map);
+    void makeCircle(Map &map);
+    void makeLine(float startX, float endX, float y, Map &map);
+    void resetWidthAndDirection();
+    void smoothe(float xPos, float yPos, Map &map);
 public:
     MountainAgent(int tokens, int minWidth, int maxWidth, AgentManager &agentManager);
 
