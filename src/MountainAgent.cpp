@@ -154,7 +154,7 @@ void MountainAgent::makeLine(float startX, float endX, float y, Map &map) {
 
     for (float i = startX; i <= endX; i += 1.0) {
         float dist = std::fabs((xPosF - i) * (xPosF - i) + (yPosF - y) * (yPosF - y));
-        float height = 1 - dist/width;
+        float height = (1 - dist/width) * this->height;
 
         setPoint(i, y, height, map);
     }
