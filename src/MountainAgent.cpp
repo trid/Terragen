@@ -94,12 +94,20 @@ void MountainAgent::createRange(Map &map) {
 
         if (wXPosP >= 0 && wXPosP < 512 && wYPosP >= 0 && wYPosP < 512) {
             setPoint(wXPosP, wYPosP, height * percent, map);
+            setPoint(wXPosP, wYPosP - 1, height * percent, map);
+            setPoint(wXPosP + 1, wYPosP, height * percent, map);
+            setPoint(wXPosP, wYPosP + 1, height * percent, map);
+            setPoint(wXPosP - 1, wYPosP, height * percent, map);
         }
 
         float wXPosN = xPosF - curDX;
         float wYPosN = yPosF - curDY;
         if (wXPosN >= 0 && wXPosN < 512 && wYPosN >= 0 && wYPosN < 512) {
             setPoint(wXPosN, wYPosN, height * percent, map);
+            setPoint(wXPosN, wYPosN - 1, height * percent, map);
+            setPoint(wXPosN + 1, wYPosN, height * percent, map);
+            setPoint(wXPosN, wYPosN + 1, height * percent, map);
+            setPoint(wXPosN - 1, wYPosN, height * percent, map);
         }
     }
 }
@@ -111,11 +119,7 @@ void MountainAgent::setPoint(float xPoint, float yPoint, float height, Map &map)
         if (tile.height < height) {
             tile.height = height;
         }
-        tile.type = TileType::Plain;
-        smoothe(xPoint, yPoint - 1, map);
-        smoothe(xPoint + 1, yPoint, map);
-        smoothe(xPoint, yPoint + 1, map);
-        smoothe(xPoint - 1, yPoint, map);
+        tile.type = TileType::Mountain;
     }
 }
 

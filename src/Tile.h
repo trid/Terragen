@@ -8,7 +8,8 @@
 enum class TileType {
     Plain,
     Beach,
-    River
+    River,
+    Mountain
 };
 
 struct Tile {
