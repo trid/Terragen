@@ -25,6 +25,6 @@ void MapGenerator::generate() {
     agentManager.addBeachAgents(128, 2, 32, 4, 60);
     agentManager.run(map);
 
-    agentManager.addMountainAgents(3, 30, 50, 600);
+    agentManager.addMountainAgents(3, 50, 90, 1600);
     agentManager.run(map);
 }
