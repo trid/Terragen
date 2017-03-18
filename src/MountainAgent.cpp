@@ -7,11 +7,13 @@
 #include "Map.h"
 #include "RandomInt.h"
 
-float pi = std::acos(-1.0f);
-float halfC = pi / 180.0f;
+namespace {
+    float pi = std::acos(-1.0f);
+    float halfC = pi / 180.0f;
 
-inline float degToRad(float deg) {
-    return deg / halfC;
+    inline float degToRad(float deg) {
+        return deg / halfC;
+    }
 }
 
 MountainAgent::MountainAgent(int tokens, int minWidth, int maxWidth, AgentManager &agentManager) : Agent(tokens, agentManager),

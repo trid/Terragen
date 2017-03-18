@@ -27,4 +27,7 @@ void MapGenerator::generate() {
 
     agentManager.addMountainAgents(3, 50, 90, 1600);
     agentManager.run(map);
+
+    agentManager.addHillsAgents(10, 30, 50, 600);
+    agentManager.run(map);
 }

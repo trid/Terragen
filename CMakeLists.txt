@@ -12,7 +12,9 @@ set(SOURCE_FILES src/main.cpp
         src/RandomInt.cpp src/RandomInt.h
         src/SmoothingAgent.cpp
         src/Tile.cpp
-        src/BeachAgent.cpp src/BeachAgent.h src/MountainAgent.cpp src/MountainAgent.h)
+        src/BeachAgent.cpp src/BeachAgent.h
+        src/MountainAgent.cpp src/MountainAgent.h
+        src/HillsAgent.cpp)
 add_executable(Terragen ${SOURCE_FILES})
 
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake_modules" ${CMAKE_MODULE_PATH})

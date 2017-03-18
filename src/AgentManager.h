@@ -27,6 +27,8 @@ public:
 
     void addMountainAgents(int count, int minWidth, int maxWidth, int tokens);
 
+    void addHillsAgents(int count, int minWidth, int maxWidth, int tokens);
+
     void run(Map& map);
 };
 

@@ -9,6 +9,7 @@
 #include "SmoothingAgent.h"
 #include "BeachAgent.h"
 #include "MountainAgent.h"
+#include "HillsAgent.h"
 
 void AgentManager::addCoastlineAgent(int tokens) {
     agents.emplace_back(new CoastlineAgent(tokens, *this));
@@ -51,5 +52,11 @@ void AgentManager::addBeachAgents(int count, int maxHeight, int maxSteps, int ma
 void AgentManager::addMountainAgents(int count, int minWidth, int maxWidth, int tokens) {
     for (int i = 0; i < count; i++) {
         agents.emplace_back(new MountainAgent(tokens, minWidth, maxWidth, *this));
+    }
+}
+
+void AgentManager::addHillsAgents(int count, int minWidth, int maxWidth, int tokens) {
+    for (int i = 0; i < count; i++) {
+        agents.emplace_back(new HillsAgent(tokens, minWidth, maxWidth, *this));
     }
 }
