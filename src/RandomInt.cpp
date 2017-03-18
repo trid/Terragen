@@ -5,7 +5,8 @@
 #include "RandomInt.h"
 
 RandomInt::RandomInt() {
-
+    std::random_device r;
+    engine.seed(r());
 }
 
 RandomInt &RandomInt::getInstance() {

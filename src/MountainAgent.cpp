@@ -29,7 +29,7 @@ minWidth(minWidth), maxWidth(maxWidth)
     xPosF = getX();
     yPosF = getY();
 
-    stepsToRotate = randomInt.nextInt(100, 200);
+    stepsToRotate = randomInt.nextInt(60, 100);
 
     updateDirection();
 }
@@ -113,6 +113,10 @@ void MountainAgent::createRange(Map &map) {
 }
 
 void MountainAgent::setPoint(float xPoint, float yPoint, float height, Map &map) {
+    if (xPoint < 0 || xPoint > 511 || yPoint < 0 || yPoint > 511) {
+        return;
+    }
+
     if (map.getItemHeight(static_cast<int>(xPoint), static_cast<int>(yPoint)) > 0) {
         Tile& tile = map.getTile(static_cast<int>(xPoint), static_cast<int>(yPoint));
 
